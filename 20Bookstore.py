@@ -4,8 +4,7 @@ mathsAvail = ["10th","11th","12th","1st Year"]
 phyAvail = ["10th","11th","12th"]
 chemAvail = []
 
-#Code
-
+#main
 user = input("Bookstore ID : ")
 print("Welcome " + user + ", just write the position of the book you want \n-- " + str(subAvail))
 
