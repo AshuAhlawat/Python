@@ -1,5 +1,4 @@
 #dictionaries as only values change not keys
-
 randomn_input=str(input("your story : "))
 randomn_words=randomn_input.split(" ")
 randomn_wordcounter={}
