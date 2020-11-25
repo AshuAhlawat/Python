@@ -32,5 +32,5 @@ for item in basket3_items:
             result3 = result3 + basket3_items.get(item,0)
     total_count3= total_count3 + basket3_items.get(item,0)
 
-print("Fruits in basket1 are {}, and other stuff {}".format(result3,total_count3-result3))
+print("Fruits in basket3 are {}, and other stuff {}".format(result3,total_count3-result3))
 

@@ -11,4 +11,4 @@ for word in randomn_wordcounter:
         suffix=""
     else:
         suffix="s"
-    print( "{} appers {} time{}".format(word,randomn_wordcounter[word],suffix))
+    print("{} appers {} time{}".format(word,randomn_wordcounter[word],suffix))
