@@ -16,7 +16,8 @@ def factorial(a):
 
 x=0
 while x<1:
-    x=int(input("Factorial of : "))
+    #x=int(input("Factorial of : "))
+    x=10
     if x<1:
         print("Wrong Entry")
 
