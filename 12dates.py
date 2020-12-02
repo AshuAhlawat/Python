@@ -22,8 +22,6 @@ def curday():
     cur = dt.datetime.now()
     print(cur.strftime("%A"))
 
-
-
 #main
 
 curall()
