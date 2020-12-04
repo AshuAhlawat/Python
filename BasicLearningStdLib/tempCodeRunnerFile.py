@@ -1,0 +1,2 @@
+
+print(money,type(money))
