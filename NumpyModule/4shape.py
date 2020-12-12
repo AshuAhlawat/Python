@@ -15,7 +15,7 @@ multo = multo.reshape(-1)
 
 print(multo)
 
-multy = multo.reshape(2, 2, -1)
+multy = multo.reshape(4, -1)
 
 print(multy)
 
