@@ -1,2 +1,1 @@
-
-print(money,type(money))
+print(matrix1)
