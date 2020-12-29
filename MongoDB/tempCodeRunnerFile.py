@@ -1,0 +1,1 @@
+mongodb+srv://Capti:1234@firstcluster.evs0f.mongodb.net/school?retryWrites=true&w=majority
