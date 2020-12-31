@@ -13,7 +13,7 @@ query = {
             #$eq,$lt,$gte,$ne,$nin
         },
         {
-            "group":"/^KO/"
+            "group":{"$regex":"^KO"}
         }
         
     ]
