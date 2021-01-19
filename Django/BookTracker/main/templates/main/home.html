@@ -1,0 +1,70 @@
+{% extends 'main/base.html' %}
+
+{%block title%} RL Home {%endblock%}
+{%block header%} HomePage {%endblock%}
+
+{%block content%}
+
+<div class="container-fluid p-4 bg-secondary text-dark text-center">
+    <div class="row">
+        <div class=" display-3 text-center bg-white text-secondary col-11" id="uncompleted">Uncomplete</div>
+        <div class="col-1"><br><a href="#completed" class="btn btn-block form-control  btn-dark">Completed</a></div>
+        
+    </div>
+    <br>
+    <br>
+    <table class="table table-dark table-hover table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Index</th>
+                <th>Name</th>
+                <th>Complete</th>
+            </tr>
+            </thead>
+        <tbody>
+            {% for book in booksuc%}
+            <tr>
+                <td>{{book.id}}</td>
+                <td>{{book.name}}</td>
+                <td>{{book.completed}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="row">
+        <div class=" display-3 text-center bg-white text-secondary col-11" id="completed">Complete</div>
+        <div class="col-1"><br><a href="#uncompleted" class="btn btn-block form-control  btn-dark">Incompleted</a></div>
+        
+    </div>
+    <br>
+    <br>
+    <table class="table table-dark table-hover table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Index</th>
+                <th>Name</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+        <tbody>
+            {% for book in booksc%}
+            <tr>
+                <td>{{book.id}}</td>
+                <td>{{book.name}}</td>
+                <td>{{book.completed}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>   
+<br>
+<br>
+
+    
+<br>
+<br>
+<hr>
+
+{%endblock%}

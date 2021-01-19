@@ -1,0 +1,44 @@
+{% extends 'main/base.html' %}
+
+{%block title%} RL Add {%endblock%}
+{%block header%} Add {%endblock%}
+
+{%block content%}
+
+<div class="container-fluid p-4 bg-secondary text-dark">
+
+    <div class="display-3 text-md-center text-center"><kbd>Add Entry</kbd></div>
+    <br>
+    <br>
+    <!-- Form -->
+    <form class="form-inline d-flex justify-content-lg-start row" action="/add" method="GET">
+        <!-- Input  -->
+        <div class="input-group col-3">
+            <div class="input-group-append">
+                <span class="input-group-text">Book Name : </span>
+            </div>
+            <input class="form-control" type="text" name="bookname" placeholder="Harry Potter" id="booknameinput1" required>
+        </div>
+        <div class="col-1">
+        </div>
+        <!-- Status  -->
+        <div class="input-group col-1">
+            <label for="bookstatus">Completed :<pre> </pre></label>
+            <input type="checkbox" name="status" class="form-control" id="bookstatus">
+        </div>
+        <div class="input-group col-5">
+        </div>
+
+        <!-- Button  -->
+        <div class="input-group col-2">
+            <button type="submit" class="form-control btn btn-dark" id="booksubmit">
+                Add!
+            </button>
+        </div> 
+    </form>
+    <br>
+    <br>
+    <hr>
+</div>
+
+{%endblock%}
