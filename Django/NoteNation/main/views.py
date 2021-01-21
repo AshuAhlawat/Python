@@ -1,15 +1,16 @@
 from django.shortcuts import render
 from django.http import response, HttpResponse, JsonResponse
-from rest_framework import serializers
 from rest_framework.parsers import JSONParser
+
 from .models import Note
 from .serializers import NoteSerializer
+
 from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
-@crsf_excempt
+# @crsf_excempt
 
-def allnotes(request):
+def home(request):
     
     if request.method == 'GET':
         notes=Note.objects.all()
