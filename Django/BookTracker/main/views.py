@@ -1,12 +1,14 @@
+from django.http import HttpResponse, request
 from django.shortcuts import render
+from numpy.lib.arraysetops import unique
 import pymongo
 import pandas
-
 myclient = pymongo.MongoClient("mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false")
 mydb = myclient["BookTracker"]
 books = mydb["main_book"]
 
 def base(response):
+    
     return render(response, 'main/base.html')
 
 def home(response):
@@ -43,7 +45,7 @@ def home(response):
 
 def add(response):
     #get responses
-
+    
     bookname = response.GET.get('bookname','None')
     bookstatus = response.GET.get('status',False)
     

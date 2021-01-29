@@ -38,8 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'main.apps.MainConfig',
-    'register.apps.RegisterConfig'
+    'main'
 ]
 
 MIDDLEWARE = [
@@ -77,11 +76,9 @@ WSGI_APPLICATION = 'NoteNation.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-    
     'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'BookTracker',
-        'HOST': 'mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -123,8 +120,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-
-# Media management issue
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URLS = '/media'
