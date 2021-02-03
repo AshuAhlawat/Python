@@ -3,12 +3,12 @@ def run():
     import requests
 
     r = requests.get("https://en.wikipedia.org/wiki/Economy_of_India")
-    with open("C:\ProgramData\GdpPlot\cache\economy.html","w",encoding="utf-8") as f:
+    with open("C:\ProgramData\economy.html","w",encoding="utf-8") as f:
         f.write(r.text)
 
     from bs4 import BeautifulSoup
 
-    with open("C:\ProgramData\GdpPlot\cache\economy.html",encoding="utf-8") as f:
+    with open("C:\ProgramData\economy.html",encoding="utf-8") as f:
         soup = BeautifulSoup(f ,'html5lib')
 
     match_gdp_table = soup.find('table',class_="wikitable sortable")
@@ -27,7 +27,7 @@ def run():
     # for entry in gdp_entries_list:
     #     print(entry)
 
-    with open("C:\ProgramData\GdpPlot\cache\economy.csv","w") as f:
+    with open("C:\ProgramData\economy.csv","w") as f:
         gdp_entries_list[0][3]=gdp_entries_list[0][3].replace("\xa0","")
         gdp_entries_list[0][6]=gdp_entries_list[0][6].replace("\xa0","")
         for entry in gdp_entries_list:
@@ -58,7 +58,7 @@ def run():
     import pandas as pd
     import matplotlib.pyplot as plt
 
-    with open("C:\ProgramData\GdpPlot\cache\economy.csv") as f:
+    with open("C:\ProgramData\economy.csv") as f:
         gdp_list=pd.read_csv(f)
 
         year=gdp_list["Year"]

@@ -1,4 +1,2 @@
-x = "2,400"
-
-x = x.replace(",","")
+x = eval("25*4")
 print(x)
