@@ -4,14 +4,13 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 driver = webdriver.Chrome(executable_path="C:\ProgramData\chromedriver.exe")
-driver.get("https://www.novels.pl/novel/I-Shall-Seal-the-Heavens/151/Chapter-151-Ill-Do-It-Myself.html")
+driver.get("https://www.novels.pl/novel/I-Shall-Seal-the-Heavens/201/Chapter-201-The-Dao-Child-Fights.html")
 
 import time
 
-def downloadloop():
-    time.sleep(4)
+def downloadloop(x):
     try:
-        match = WebDriverWait(driver,2).until(
+        match = WebDriverWait(driver,3).until(
             EC.presence_of_element_located(
             (By.ID,'aswift_7')
             )
@@ -30,13 +29,15 @@ def downloadloop():
             (By.CLASS_NAME,'_download')
         )
     )
-    
+
     search_d = driver.find_element_by_class_name("_download")
     search_d.click()
-    time.sleep(5)
+    time.sleep(3)
     search_n = driver.find_elements_by_css_selector('a[href^="/novel/"]')
     search_n[1].click()
-    time.sleep(4)
-    downloadloop()
-        
-downloadloop()
+    time.sleep(3)
+    print("\n\nChapter "+str(x)+" downloaded")
+    x = x+1
+    downloadloop(x)
+
+downloadloop(201)

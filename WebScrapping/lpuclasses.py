@@ -60,7 +60,7 @@ def onlineclassscript():
             search = driver.find_element_by_css_selector('a[style*="color: white; background: green;"]')
             search.click()
             break
-        except:
+        except Exception as e:
             print(" No Class in progress yet... ")
             time.sleep(120)
     
@@ -73,7 +73,7 @@ def onlineclassscript():
     search.click()
     
     #switching to the audio choice frame
-    match_search = WebDriverWait(driver,40).until(
+    match_search = WebDriverWait(driver,400).until(
         expected_conditions.presence_of_element_located(
             (By.ID, 'frame')
         )
@@ -102,7 +102,7 @@ def onlineclassscript():
     #waiting for class end
     while True:
         try:
-            match_search = WebDriverWait(driver,120).until(
+            match_search = WebDriverWait(driver,3).until(
                 expected_conditions.presence_of_element_located(
                     (By.CSS_SELECTOR, 'button[aria-label="OK"]')
                 )
@@ -110,7 +110,23 @@ def onlineclassscript():
             #joining any next class if any 
             onlineclassscript()
         except:
-            print("class in progress",)
+            try:
+                match_search = WebDriverWait(driver,117).until(
+                    expected_conditions.presence_of_element_located(
+                        (By.CSS_SELECTOR, 'div[class*="pollingContainer"]')
+                    )
+                )
+                try:
+                    search = driver.find_element_by_css_selector('button[aria-label="B"]')
+                    search.click()
+                except Exception as e:
+                    print(e)
+                    search = driver.find_element_by_css_selector('button[aria-label="Yes"]')
+                    search.click()
+                print("Poll Attended")
+            except Exception as e:
+                print(e)
+                print("class in progress")
             
 
 onlineclassscript()

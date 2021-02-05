@@ -5,14 +5,13 @@ cluster = mg.MongoClient("mongodb+srv://Capti:1234@firstcluster.evs0f.mongodb.ne
 db = cluster["school"]
 table = db["class"]
 
-
-def main():      
+def main():
     
     try: 
         
         no=int(input("\nNo of documents to post : "))
         posts=[]
-        
+        1
         for i in range(no):
             regno = int(input("\nRegisteration Number : "))
             name = str(input(   "        Name         : "))
@@ -26,7 +25,7 @@ def main():
         print("\n\n     SUCCESS")
         
     except :
-        
+    
         print("\n\n     WRONG DATA, RE-ENTER")
         main()
 

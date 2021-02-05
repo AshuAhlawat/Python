@@ -8,14 +8,11 @@ mydb = myclient["BookTracker"]
 books = mydb["main_book"]
 
 def base(response):
-    
+
     return render(response, 'main/base.html')
 
 def home(response):
-    #get responses
-    
-    
-    #backend
+
     all_books = pandas.DataFrame(books.find({}))
 
     length = len(all_books)
@@ -31,33 +28,28 @@ def home(response):
             else:
                 djbooksuc.append({"id":uc, "name":all_books["name"][i], "completed":"No"})
                 uc+=1
-    
-    
-        
+
     #passing values
     dicts={
         "name": { "first" : "Ashwani", "last":"Ahlawat"},
         "booksc":djbooksc,
         "booksuc":djbooksuc,
     }
-        
+
     return render(response, 'main/home.html', dicts)
 
 def add(response):
     #get responses
-    
+
     bookname = response.GET.get('bookname','None')
     bookstatus = response.GET.get('status',False)
-    
+
     all_books = pandas.DataFrame(books.find({}))
-        
+
     i=max(all_books["id"])+1            
-        
+
     books.insert_one({"id":i, "name":bookname, "completed":bookstatus})
-    #backend
-    
-    
-    #passing values
+
     dicts={
         "name": { "first" : "Ashwani", "last":"Ahlawat"},
         "books":"",

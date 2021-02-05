@@ -93,4 +93,4 @@ async def msg(ctx, *,ques):
     r = input("Send : ")
     
     await ctx.send(f'{r}')
-client.run('ODA2MDQyMjUwNTQyMzE3NTg4.YBjrWA.x1dky4jYUvca4qCGHWcwAkvBQq0')
+client.run('ODA2MDQyMjUwNTQyMzE3NTg4.YBjrWA.R1KLKNSPkX7O9knNH1cfx-rLqak')
