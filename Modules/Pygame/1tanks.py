@@ -54,6 +54,7 @@ while running:
     screen.fill((25,50,25))
     playerX += playerX_p + playerX_m
     playerY += playerY_p + playerY_m
+    
     if playerX<0-4:
         playerX=0-4
     elif playerX>1000-60:
