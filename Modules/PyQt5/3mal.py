@@ -2,7 +2,6 @@ import requests
 from bs4 import BeautifulSoup
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         # Main Window Setup
@@ -91,7 +90,7 @@ class Ui_MainWindow(object):
         self.searchbtn.setGeometry(QtCore.QRect(980, 8, 93, 37))
         self.searchbtn.setDefault(True)
         self.searchbtn.setObjectName("searchbtn")
-        self.searchbtn.clicked.connect(self.mal_search)
+        self.searchbtn.clicked.connect(self.searchbtn_pressed)
         self.searchbtn.setStyleSheet("background-color:grey;color:white;")
         
         #Profile Pic
@@ -99,6 +98,7 @@ class Ui_MainWindow(object):
         self.pp.setGeometry(QtCore.QRect(10, 60, 291, 221))
         self.pp.setText("")
         self.pp.setObjectName("pp")
+        self.pp.setPixmap(QtGui.QPixmap("./def.jpg"))
         
         #User info Label
         self.frame = QtWidgets.QFrame(self.centralwidget)
@@ -796,7 +796,7 @@ class Ui_MainWindow(object):
         self.recents_m.setText(_translate("MainWindow", "_"))
         self.favourite_m.setText(_translate("MainWindow", "_"))
 
-    def mal_search(self):
+    def searchbtn_pressed(self):
         
         
         
