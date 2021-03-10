@@ -3,7 +3,7 @@ import requests
 def offlinesite(x):
     
     r1 = requests.get(x)
-    r2 = requests.get("https://cdn.myanimelist.net/images/userimages/6476477.jpg")
+    r2 = requests.get("https://cdn.myanimelist.net/images/userimages/6476477.jpg?t=1615238400")
     
     if r1.ok and r2.ok:
         

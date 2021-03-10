@@ -5,15 +5,9 @@ def clicked(username):
     try:
         # GET REQUEST TO SITE
         r_completed = requests.get("https://myanimelist.net/profile/"+username)
-
-        # CREATING FILE
-        with open("2malcompleted.html","w+",encoding="utf-8") as html_file:
-            html_file.write(r_completed.text)
-
-        with open("2malcompleted.html",encoding="utf-8") as html_file:
-            soup = BeautifulSoup(html_file, 'lxml')
-
+        
                                 # USER INFO SCRAPPING
+        soup = BeautifulSoup(r_completed.text, 'lxml')
 
         #user personal data
         match_user_data = soup.find_all('span', class_='user-status-data')
@@ -22,6 +16,10 @@ def clicked(username):
         #user profile pic
         match_user_img = soup.find('img', class_="lazyload")['data-src']
 
+        r = requests.get(match_user_img)
+        with open("pp.jpg","wb") as f:
+            f.write(r.content)
+        
         # USER INFO POST
         try:
             user_info = {
@@ -202,11 +200,8 @@ def clicked(username):
         all_data={"user_info" : user_info, "anime_info" : anime_info, "manga_info" : manga_info}
         return all_data
 
-def main():
     
-    username = str(input("ENTER USERNAME : "))
-    data = clicked(username)
-    
-    print(data)
+username = str(input("ENTER USERNAME : "))
+data = clicked(username)
 
-main()
+print(data)
