@@ -16,6 +16,7 @@ class Ui_MainWindow(object):
         # logic
         self.brac_start = 0
         self.display_text = ""
+        
         #main window setup
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(708, 722)

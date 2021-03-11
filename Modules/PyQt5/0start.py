@@ -1,9 +1,7 @@
 import sys
 import PyQt5.QtWidgets as qt
-x="abcd"
-print(len(x))
-x = x.replace(x[len(x)-1],"")
-print(x)
+for i in range(4):
+    print(i)
 
 class Exampleapp(qt.QMainWindow):
     def __init__(self):
