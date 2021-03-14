@@ -1,7 +1,7 @@
 import sys
 import PyQt5.QtWidgets as qt
-for i in range(4):
-    print(i)
+
+
 
 class Exampleapp(qt.QMainWindow):
     def __init__(self):
