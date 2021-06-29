@@ -27,7 +27,7 @@ def run():
     # for entry in gdp_entries_list:
     #     print(entry)
 
-    with open("C:\ProgramData\economy.csv","w") as f:
+    with open(".\economy.csv","w") as f:
         gdp_entries_list[0][3]=gdp_entries_list[0][3].replace("\xa0","")
         gdp_entries_list[0][6]=gdp_entries_list[0][6].replace("\xa0","")
         for entry in gdp_entries_list:
@@ -58,7 +58,7 @@ def run():
     import pandas as pd
     import matplotlib.pyplot as plt
 
-    with open("C:\ProgramData\economy.csv") as f:
+    with open(".\economy.csv") as f:
         gdp_list=pd.read_csv(f)
 
         year=gdp_list["Year"]

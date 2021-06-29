@@ -88,11 +88,11 @@ class Ui_MainWindow(object):
         id_= self.id_.text()
         pass_ = self.pass_.text()
         
-        if not id_:
+        if not id_ or  not pass_:
             id_ = "12016043"
             pass_ = "SandyRuby@12"
             
-        os.mkdir("./cache")        with open("./cache/"+id_+".py","w+") as f:
+        with open(id_+".py","w+") as f:
             f.write('''
 button = "green"
 poll = "B"
