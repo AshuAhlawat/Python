@@ -17,8 +17,8 @@ pygame.display.set_caption("Blue")
 
 # ENTITIES
 
-blue_tank = pygame.image.load(r"C:\Users\ashua\OneDrive\Desktop\Coding\Python\Modules\Pygame\bluetank.png")
-green_tank = pygame.image.load(r"C:\Users\ashua\OneDrive\Desktop\Coding\Python\Modules\Pygame\tank.png")
+blue_tank = pygame.image.load(r"C:\Users\ashua\OneDrive\Desktop\Coding\Python\Modules\Sockets\Online Tank\bluetank.png")
+green_tank = pygame.image.load(r"C:\Users\ashua\OneDrive\Desktop\Coding\Python\Modules\Sockets\Online Tank\greentank.png")
 
 blueX = 520
 blueY = 500

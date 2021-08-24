@@ -6,7 +6,7 @@ print(multi,"\n\n",multi.shape,"\n")
 for i in numpy.nditer(multi):
     print(i,end=" ")
 
-multu = numpy.array(multi,ndmin=5)
+multu = numpy.array(multi,ndmin=4)
 print("\n",multu,"\n",multu.shape)
 
 multo = multu.copy()
