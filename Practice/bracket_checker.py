@@ -22,7 +22,7 @@ def is_well_paired(value):
                         check.append(0)
                         break
     
-    print(check)
+    # print(check)
     return all(check)
                 
     
