@@ -6,6 +6,9 @@ class SingleList:
         self.head = None
         self.tail = None
 
+        #iterator
+        self.ref = None
+        self.first = True
     
     def add(self,x):
         x = Node(x)
@@ -105,38 +108,86 @@ class SingleList:
             return size
         else:
             return 0
+    
+    def __iter__(self):
+        return self
+    
+    def __next__(self):
+        if self.first:
+            self.ref=self.head
+            self.first = False
+            return self.ref
+
+        self.ref = self.ref.next
+        if self.ref:
+            return self.ref
+        
+        self.ref = None
+        self.first = True
+
+        raise StopIteration
+        
+
+        
 
 
-ex = SingleList()
+def example1():
+    ex = SingleList()
 
-ex.add(4)
-ex.add(3)
-ex.add(9)
-ex.add(6)
+    ex.add(4)
+    ex.add(3)
+    ex.add(9)
+    ex.add(6)
 
-print(ex)
+    print(ex)
 
-ex.insert(1)
-ex.insert(5)
-print(ex)
+    ex.insert(1)
+    ex.insert(5)
+    print(ex)
 
-ex.insert(11,3)
-print(ex)
+    ex.insert(11,3)
+    print(ex)
 
-ex.pop()
-print(ex)
+    ex.pop()
+    print(ex)
 
-ex.remove()
-print(ex)
+    ex.remove()
+    print(ex)
 
-ex.remove(3)
-print(ex)
+    ex.remove(3)
+    print(ex)
 
 
-print(ex.head,ex.tail)
-print(len(ex))
-print(ex.get(2))
+    print(ex.head,ex.tail)
+    print(len(ex))
+    print(ex.get(2))
 
-ex.clear()
-print(ex)
+    ex.clear()
+    print(ex)
 
+    ey = SingleList()
+
+    ey.add(3)
+    ey.add(5)
+
+    print(ey)
+
+# example1()
+
+def example2():
+    a = SingleList()
+
+    a.add(1)
+    a.add(2)
+    a.add(3)
+    a.add(4)
+
+    for i in a:
+        print(i)
+    
+    for i in a:
+        print(a)
+    
+
+
+# example2()
