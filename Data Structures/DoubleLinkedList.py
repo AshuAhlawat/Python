@@ -1,4 +1,11 @@
-from Node import Node
+class Node:
+    def __init__(self,data):
+        self.cur = data
+        self.prev = None
+        self.next = None
+    
+    def __str__(self):
+        return str(self.cur)
 
 class DoubleList:
     def __init__(self):
@@ -118,28 +125,31 @@ class DoubleList:
         
 
 
+def example1():
+    ex = DoubleList()
 
-ex = DoubleList()
+    ex.add(4)
+    ex.add(3)
+    ex.add(9)
+    ex.add(6)
+    print(ex)
 
-ex.add(4)
-ex.add(3)
-ex.add(9)
-ex.add(6)
-print(ex)
+    ex.insert(7)
+    print(ex)
 
-ex.insert(7)
-print(ex)
+    ex.insert(5,3)
+    print(ex)
 
-ex.insert(5,3)
-print(ex)
+    ex.pop()
+    print(ex)
 
-ex.pop()
-print(ex)
+    ex.remove()
+    print(ex)
 
-ex.remove()
-print(ex)
+    ex.remove(2)
+    print(ex)
 
-ex.remove(2)
-print(ex)
+    print(ex.get(2).prev)
 
-print(ex.get(2).prev)
+
+# example1()
