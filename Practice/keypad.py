@@ -1,8 +1,9 @@
-keyboard = [' ','','abc','def','ghi','jkl','mno','pqrs','tuv','wxyz',' ']
+keyboard = [' ','','abc','def','ghi','jkl','mno','pqrs','tuv','wxyz']
 
 pattern = int(input("Enter Number: "))
 
 digits = []
+
 while pattern>0:
     digit = pattern%10
     digits.append(digit)
@@ -10,11 +11,11 @@ while pattern>0:
     
 digits.reverse()
 
+
 def prob(digits,n=0,x=''):
 
     if len(digits)>n:
         for i in keyboard[digits[n]]:
-            
             prob(digits,n+1,x+i)
 
     if len(x)==len(digits):
