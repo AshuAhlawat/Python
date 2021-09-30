@@ -40,26 +40,28 @@ class Stack:
 
         
 
+def example():
+    a = ["a","b","c"]
 
-a = ["a","b","c"]
+    # b = 3
+    b = Stack(a)
 
-# b = 3
-b = Stack(a)
+    print(b)
 
-print(b)
+    b.push("d")
 
-b.push("d")
+    print(b)
 
-print(b)
+    b.pop()
+    b.pop()
 
-b.pop()
-b.pop()
+    print(b)
 
-print(b)
-
-print(b.top)
-print(len(b))
+    print(b.top)
+    print(len(b))
 
 
-for i in b:
-    print(i)
+    for i in b:
+        print(i)
+
+# example()
