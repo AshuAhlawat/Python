@@ -10,7 +10,7 @@ class BinaryTree:
         x = ""
         
         ap = []
-
+    
         depth = self.depth()
         sum = 0
         for i in range(depth):
@@ -28,7 +28,7 @@ class BinaryTree:
 
         return x
 
-    def swap(self,pos1,pos2):
+    def swap(self,pos1,pos2,value=True):
         self.array[pos1],self.array[pos2]=self.array[pos2],self.array[pos1]
     
     def top(self):
@@ -79,21 +79,32 @@ class BinaryTree:
     def sibling(self,pos,value=True):
         if value:
             pos = self.array.index(pos)
-        try:
-            if pos%2==0:
+
+        if pos%2==0:
+            if value:
                 return self.array[pos-1]
             else:
-                return self.array[pos+1]
-        except:
-            return None
+                return pos-1
+        else:
+            if pos+1<len(self):
+                if value:
+                    return self.array[pos+1]
+                else:
+                    return pos+1        
 
     def left(self,pos,value=True):
         if value:
-            pos = self.array.index(pos)
+            try:
+                pos = self.array.index(pos)
+            except:
+                return None
         
-        try:
-            return self.array[pos*2 + 1]
-        except:
+        if pos*2+1<len(self):
+            if value:
+                return self.array[pos*2 + 1]
+            else:
+                return pos*2 + 1
+        else:
             return None
 
 
@@ -102,9 +113,12 @@ class BinaryTree:
         if value:
             pos = self.array.index(pos)
 
-        try:
-            return self.array[pos*2 + 2]
-        except:
+        if pos*2+2<len(self):
+            if value:
+                return self.array[pos*2 + 2]
+            else:
+                return pos*2 + 2
+        else:
             return None
 
     def depth(self):
