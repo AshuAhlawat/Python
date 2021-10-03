@@ -12,17 +12,21 @@ class BinaryTree:
         ap = []
     
         depth = self.depth()
+        gap = int(2**(depth-2))
+        
         sum = 0
+        
         for i in range(depth):
             sum += 2**i
             ap.append(sum)
 
-
+        x += " "*gap
         for i in range(len(self.array)):
-    
+            
             for j in ap:
+                new_gap = gap-(2**int(ap.index(j)))
                 if i==j:
-                    x+="\n"
+                    x+="\n"+" "*new_gap
     
             x += str(self.array[i])+" "
 
@@ -170,3 +174,11 @@ def example():
 
 
 # example()
+def example2():
+    x = BinaryTree()
+    for i in range(0,28):
+        x.add(i)
+    
+    print(x)
+
+example2()

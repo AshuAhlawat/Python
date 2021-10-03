@@ -1,6 +1,6 @@
 from BinaryTree import BinaryTree
 
-class MinHeap(BinaryTree):
+class MaxHeap(BinaryTree):
     def __init__(self):
         super().__init__()
 
@@ -10,7 +10,7 @@ class MinHeap(BinaryTree):
 
             pos = len(self)-1
             
-            while data<self.array[self.parent(pos,value=False)]:
+            while data>self.array[self.parent(pos,value=False)]:
                 self.swap(pos,self.parent(pos,value=False))
                 
                 if self.parent(pos,value=False):
@@ -31,7 +31,7 @@ class MinHeap(BinaryTree):
         self.array.pop()
         
         if self.parent(pos,value=False):
-            while self.array[pos]<self.array[self.parent(pos,value=False)]:
+            while self.array[pos]>self.array[self.parent(pos,value=False)]:
                     self.swap(pos,self.parent(pos,value=False))
                     
                     if self.parent(pos,value=False):
@@ -43,22 +43,22 @@ class MinHeap(BinaryTree):
             left = self.left(pos,value=False)
             right = self.right(pos,value=False)
             if right:
-                if self.array[right]<self.array[left]:
-                    if self.array[pos]>self.array[right]:
+                if self.array[right]>self.array[left]:
+                    if self.array[pos]<self.array[right]:
                         x = self.right(pos,value=False)
                         self.swap(pos,right,value=False)
                         pos = x
                     else:
                         break
                 else:
-                    if self.array[pos]>self.array[left]:
+                    if self.array[pos]<self.array[left]:
                         x = self.left(pos,value=False)  
                         self.swap(pos,left,value=False) 
                         pos = x 
                     else:
                         break
             else:
-                if self.array[pos]>self.array[left]:
+                if self.array[pos]<self.array[left]:
                         x = self.left(pos,value=False)  
                         self.swap(pos,left,value=False) 
                         pos = x 
@@ -66,39 +66,13 @@ class MinHeap(BinaryTree):
                     break
 
 
+def example():
+    x = MaxHeap()
 
-def example1():
-    x = MinHeap()
-
-    x.add('d')
-
-    x.add('c')
-    x.add('e')
+    for i in range(0,15):
+        x.add(i)
     print(x)
-    x.add('a')
-    x.add('t')
-    x.add('b')
-    x.add('f')
-    print(x)
-    x.add('a')
-    x.add('h')
-    x.add('i')
-    x.add('k')
-    x.add('b')
+    x.remove(14)
     print(x)
 
-# example1()
-
-def example2():
-    y = MinHeap()
-    for i in range(25,0,-1):
-        y.add(i)
-    
-    print(y)
-    y.remove(0,value=False)
-    print(y)
-    y.remove(6)
-    print(y)
-
-
-# example2()
+example()
