@@ -33,17 +33,20 @@ class Queue:
         return self.front
     
 
-x = Queue()
+def example():
+    x = Queue()
 
-x.enqueue(3)
-x.enqueue(5)
-x.dequeue()
-x.enqueue(2)
-x.enqueue(6)
+    x.enqueue(3)
+    x.enqueue(5)
+    x.dequeue()
+    x.enqueue(2)
+    x.enqueue(6)
 
-print(x)
-print(x.peek())
+    print(x)
+    print(x.peek())
 
-for i in x:
-    print(i)
+    for i in x:
+        print(i)
+
+# example()
 
