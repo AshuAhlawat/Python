@@ -1,6 +1,6 @@
 class BinaryTree:
-    def __init__(self):
-        self.array = []
+    def __init__(self,array=[]):
+        self.array = array
         self.dtype = None
 
     def __len__(self):

@@ -10,7 +10,7 @@ class Node:
     def __str__(self):
         return str(self.cur)
 
-class BinarySearchTree:
+class BinarySearchTree():
 
     def __init__(self):
         self.head = None
@@ -126,7 +126,7 @@ def example2():
 
     ref = BinarySearchTree()
 
-    for i in range(10):
+    for i in range(12):
         x = randint(0,40)
         ref.add(x)
     
@@ -136,4 +136,21 @@ def example2():
     print(ref.preorder())
     print(ref.postorder())
     
-example2()leveled.append(x.cur)
+# example2()
+
+# leveled.append(x.cur)
+
+def example3():
+    start = ord("A")
+    print(start)
+    print(chr(start))
+    
+    morse = BinarySearchTree()
+
+    for i in range(65,65+27):
+        morse.add(chr(i))
+
+    print(morse.levelorder())
+
+
+# example3()
