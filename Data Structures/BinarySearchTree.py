@@ -1,4 +1,3 @@
-from Queue import Queue
 
 class Node:
     def __init__(self,data):
@@ -102,6 +101,14 @@ class BinarySearchTree():
                 
 
         return leveled
+    
+    def search():
+        pass
+        #to be built
+    
+    def delete():
+        pass
+        #to be built`
 
 
 def example1():
@@ -139,18 +146,3 @@ def example2():
 # example2()
 
 # leveled.append(x.cur)
-
-def example3():
-    start = ord("A")
-    print(start)
-    print(chr(start))
-    
-    morse = BinarySearchTree()
-
-    for i in range(65,65+27):
-        morse.add(chr(i))
-
-    print(morse.levelorder())
-
-
-# example3()

@@ -1,8 +1,8 @@
 import time
 
 
-def timeit(func):
+def timeit(func,params):
     start = time.time()
-    func()
+    func(*params)
     end = time.time()
     print("Execution Time: ",end-start)

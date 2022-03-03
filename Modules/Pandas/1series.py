@@ -5,3 +5,4 @@ print(y,"\n",y[1])
 
 y = pd.Series({"day1": 420, "day2": 380, "day3": 390})
 print(y,"\n",y["day2"])
+

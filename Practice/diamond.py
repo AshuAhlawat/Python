@@ -1,7 +1,5 @@
 from _timer import timeit
 
-
-
 def main():
     x = 5
     
