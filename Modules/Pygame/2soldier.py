@@ -86,6 +86,7 @@ def collision(snakes_left,snakes_right):
             if abs(snake.right - 512) < 5:
                 print(score)
                 pygame.quit()
+                exit()
             if abs(snake.centerx - x + 15) < 5:
                 snakes_left.remove(snake)
                 score += 1
@@ -93,6 +94,7 @@ def collision(snakes_left,snakes_right):
             if abs(snake.left - 552) < 5:
                 print(score)
                 pygame.quit()
+                exit()
             if abs(snake.centerx - x - 40) < 5:
                 snakes_right.remove(snake)
                 score += 1
@@ -101,6 +103,7 @@ def collision(snakes_left,snakes_right):
             if abs(snake.right - 512) < 5:
                 print(score)
                 pygame.quit()
+                exit()
             if abs(snake.centerx - x + 15) < 5:
                 snakes_left.remove(snake)
                 score += 1
@@ -110,6 +113,7 @@ def collision(snakes_left,snakes_right):
             if abs(snake.left - 552) < 5:
                 print(score)
                 pygame.quit()
+                exit()
             if abs(snake.centerx - x - 40) < 5:
                 snakes_right.remove(snake)
                 score += 1
@@ -126,6 +130,7 @@ direction=""
 state = "up"
 jump = "no"
 y = 650
+
 soldier_rest = pygame.image.load("assets/standmid.png")
 soldier_up_left = pygame.image.load("assets/standleft.png")
 soldier_up_right = pygame.image.load("assets/standright.png")

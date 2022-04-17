@@ -13,5 +13,5 @@ def main():
             print("*",end="")
         print("")
 
-
+    
 timeit(main)

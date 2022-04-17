@@ -1,8 +1,12 @@
 import time
 
 
-def timeit(func,params):
+def timeit(func,params=None):
+    
     start = time.time()
-    func(*params)
+    if params:
+        func(*params)
+    else:
+        func()
     end = time.time()
     print("Execution Time: ",end-start)
