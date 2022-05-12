@@ -1,5 +1,4 @@
 #Download Python
-#Download Chrome WebDriver Version 88 and paste it in ProgramData in C Drive
 #pip install selenium
 
 from selenium import webdriver

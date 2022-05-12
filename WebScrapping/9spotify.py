@@ -1,10 +1,10 @@
 #spotify
-username = "ashuahlawat22@gmail.com"
-password = "ASHUahlawat@12"
+username = "xxxxx@gmail.com"
+password = "xxxxxxx"
 
 #discord
-username_d = "rohildalal@gmail.com"
-password_d = "DiscordGang6969"
+username_d = "xxxxxx@gmail.com"
+password_d = "xxxxxxxxxx"
 
 #queue
 queue = 20
